@@ -100,6 +100,8 @@ fn delete_by_title(connection: &PgConnection) {
     posts_repo::delete_post_by_title(&connection, title);
 }
 
+// #[derive(EnumFromStr)] similar to this could be another approach
+// instead of impl FromStr for Action. But not exactly. It would require more details
 enum Action {
     Add,
     Publish,
